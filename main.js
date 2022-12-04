@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function(cookies) {
         var BAIDU_BDUSS = "";
         for (var i in cookies) {
-        var BAIDU_BDUSS = cookies[0].value;
+          var BAIDU_BDUSS = cookies[0].value;
         }
         if (!BAIDU_BDUSS) {BAIDU_BDUSS = "您未登录百度网盘";}
         document.getElementById("cookies-BDUSS").innerText = BAIDU_BDUSS;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function(cookies) {
         var BAIDU_STOKEN = "";
         for (var i in cookies) {
-        var BAIDU_STOKEN = cookies[0].value;
+          var BAIDU_STOKEN = cookies[0].value;
         }
         if (!BAIDU_STOKEN) {BAIDU_STOKEN = "您未登录百度网盘";}
         document.getElementById("cookies-STOKEN").innerText = BAIDU_STOKEN;
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
           BAIDU_ALL += cookies[i].name + "=" + cookies[i].value + ";";
         }
         if (!BAIDU_ALL) {BAIDU_ALL = "您未登录百度网盘";}
+        BAIDU_ALL = decodeURIComponent(BAIDU_ALL);
         document.getElementById("cookies-ALL").innerText = BAIDU_ALL;
       }
     );
